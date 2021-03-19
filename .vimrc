@@ -1,5 +1,12 @@
+set guifont=Droid\ Sans\ Mono\ Slashed\ for\ Powerline
+set guioptions+=a
+set cursorline
+set shiftwidth=4
+set softtabstop=4
+set expandtab
 set encoding=utf-8
 set fileencoding=utf-8
+set updatetime=100
 set nocompatible
 set termguicolors
 set hidden
@@ -17,7 +24,6 @@ set cmdheight=2     " enlarge the command area to two lines
 set number          " display line numbers
 filetype off
 
-set laststatus=2
 set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
@@ -27,7 +33,8 @@ Plugin 'junegunn/seoul256.vim'
 Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-fugitive' 	" git plugin, use :Git/:G
 Plugin 'justinmk/vim-sneak'	" shortcut for searching for strings
-Plugin 'itchyny/lightline.vim'	" lightweight statusline/tabline
+Plugin 'vim-airline/vim-airline'	" lightweight statusline/tabline
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'airblade/vim-gitgutter'	" show git diffs and details
 
 " Everything related to NERDtree
@@ -39,11 +46,6 @@ Plugin 'scrooloose/nerdtree-project-plugin'	" NERDtree persistence
 call vundle#end()
 
 filetype plugin indent on
-
-" lightline color settings
-let g:lightline = {
-    \ 'colorscheme': 'seoul256',
-    \ }
 
 let g:seoul256_background = 234
 let g:seould256_srgb = 1
@@ -61,11 +63,10 @@ augroup NERD
 
 	" Open the existing NERDTree on each new tab.
 	autocmd BufWinEnter * silent NERDTreeMirror
-	autocmd VimEnter * call lightline#update()
 augroup END
 
 " Set default width of NERDTree
-let NERDTreeWinSize = 50
+let NERDTreeWinSize = 40
 let g:NERDTreeGitStatusIndicatorMapCustom = {
     \ 'Modified'    :'*',
     \ 'Staged'      :'+',
@@ -77,4 +78,7 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
     \ 'Ignored'     :'!',
     \ 'Clean'       :'✔︎',
     \ 'Unknown'     :'?',
-    \ } 
+    \ }
+
+" Airline configurations
+let g:airline#extensions#tabline#enabled = 1
