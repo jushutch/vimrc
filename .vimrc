@@ -1,31 +1,18 @@
-set guifont=Droid\ Sans\ Mono\ Slashed\ for\ Powerline
-set guioptions+=a
-set cursorline
-set shiftwidth=4
-set softtabstop=4
-set expandtab
-set encoding=utf-8
 set fileencoding=utf-8
+set encoding=utf-8
+set cursorline
 set updatetime=100
+set mouse=a
 set nocompatible
-set termguicolors
-set hidden
-set showcmd
-set showmode
-set hlsearch
-set showmatch
-set autoread
 set noshowmode
 set ignorecase      " searches are case-insensitive
 set smartcase       " ...unless you actually include capital letters in the search string
-
 set scrolloff=3
 set cmdheight=2     " enlarge the command area to two lines
 set number          " display line numbers
+
 filetype off
-
 set rtp+=~/.vim/bundle/Vundle.vim
-
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
@@ -82,3 +69,4 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
 
 " Airline configurations
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
