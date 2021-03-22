@@ -15,20 +15,21 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'junegunn/seoul256.vim'
+Plugin 'VundleVim/Vundle.vim'			" Vundle, a plugin installer for Vim
+Plugin 'junegunn/seoul256.vim'			" seoul256 colorscheme
 Plugin 'tpope/vim-sensible'
-Plugin 'tpope/vim-fugitive' 	" git plugin, use :Git/:G
-Plugin 'justinmk/vim-sneak'	" shortcut for searching for strings
-Plugin 'vim-airline/vim-airline'	" lightweight statusline/tabline
+Plugin 'tpope/vim-fugitive' 			" git plugin, use :Git/:G
+Plugin 'justinmk/vim-sneak'			" shortcut for searching for strings
+Plugin 'vim-airline/vim-airline'		" lightweight statusline/tabline
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'airblade/vim-gitgutter'	" show git diffs and details
+Plugin 'airblade/vim-gitgutter'			" show git diffs and details
 
 " Everything related to NERDtree
-Plugin 'preservim/nerdtree'			" directory pane
-Plugin 'Xuyuanp/nerdtree-git-plugin' 		" show git status for files
-Plugin 'ryanoasis/vim-devicons'			" add filetype-specific icons
-Plugin 'scrooloose/nerdtree-project-plugin'	" NERDtree persistence
+Plugin 'preservim/nerdtree'				" directory pane
+Plugin 'Xuyuanp/nerdtree-git-plugin' 			" show git status for files
+Plugin 'ryanoasis/vim-devicons'				" add filetype-specific icons
+Plugin 'scrooloose/nerdtree-project-plugin'		" NERDtree persistence
+Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'	" Highlight files in NERDTree
 
 call vundle#end()
 
@@ -39,6 +40,7 @@ let g:seould256_srgb = 1
 colorscheme seoul256
 set background=dark
 
+" NERDTree configuration
 augroup NERD
 	au!
 	" Start NERDTree and put the cursor back in the other window.
@@ -52,8 +54,11 @@ augroup NERD
 	autocmd BufWinEnter * silent NERDTreeMirror
 augroup END
 
-" Set default width of NERDTree
 let NERDTreeWinSize = 40
+let NERDTreeShowHidden = 1
+let g:NERDTreeLimitedSyntax = 1
+let g:NERDTreeDirArrowExpandable = '▶'
+let g:NERDTreeDirArrowCollapsible = '▼'
 let g:NERDTreeGitStatusIndicatorMapCustom = {
     \ 'Modified'    :'*',
     \ 'Staged'      :'+',
@@ -63,10 +68,10 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
     \ 'Deleted'     :'-',
     \ 'Dirty'       :'.',
     \ 'Ignored'     :'!',
-    \ 'Clean'       :'✔︎',
+    \ 'Clean'       :'',
     \ 'Unknown'     :'?',
     \ }
 
-" Airline configurations
+" Airline configuration
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
