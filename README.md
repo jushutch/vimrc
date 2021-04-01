@@ -18,6 +18,9 @@ To install all of the plugins required by .vimrc, run:
 Install the JetBrains Mono font according to your OS and set it as your terminal's default font.
 
 
+![.vimrc Demo](demo.png)
+
+
 ## Support
 The JetBrains Nerd Font is from [ryanoasis/nerd-fonts](https://github.com/ryanoasis/nerd-fonts). This
 .vimrc was inspired by [wolf/dotfiles](https://github.com/wolf/dotfiles) (you're great Wolf, thanks for
